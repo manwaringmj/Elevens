@@ -37,8 +37,8 @@ public class Shuffler {
         }
         System.out.println();
 
-        System.out.println("Results of " + SHUFFLE_COUNT +
-                                 " consecutive efficient selection shuffles:");
+        System.out.println(SHUFFLE_COUNT +
+                                 " selection shuffles:");
         int[] values2 = new int[VALUE_COUNT];
         for (int i = 0; i < values2.length; i++) {
             values2[i] = i;
@@ -62,20 +62,20 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void perfectShuffle(int[] values) {
-        int[] half1 = new int[ VALUE_COUNT / 2 ];
-        int[] half2 = new int[ VALUE_COUNT - VALUE_COUNT / 2 ];
+        int[] half1 = new int[ values.length / 2 ];
+        int[] half2 = new int[ values.length - values.length / 2 ];
 
-        for( int i = 0; i < VALUE_COUNT / 2; i++ ) {
+        for( int i = 0; i < values.length / 2; i++ ) {
             half1[i] = values[i];
         }
         
-        for( int i = 0; i < VALUE_COUNT - VALUE_COUNT / 2; i++ ) {
-            half2[i] = values[ i + VALUE_COUNT / 2 ];
+        for( int i = 0; i < values.length / 2; i++ ) {
+            half2[i] = values[ i + values.length / 2 ];
         }
 
-        for( int i = 0; i < VALUE_COUNT / 2; i++ ) {
-            values[ 2 * i ] = half2[i];
-            values[ 2 * i + 1 ] = half1[i];
+        for( int i = 0; i < values.length / 2; i++ ) {
+            values[ 2 * i + 1 ] = half2[i];
+            values[ 2 * i ] = half1[i];
         }
     }
 
