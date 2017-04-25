@@ -1,0 +1,3 @@
+1.) Size is not an abstract method because it would need be completely changed or be a different method for eacch game
+2.) Because it has to know everytime what to get rid of it can't be left up to interpertation 
+3.) This new scheme would be polymorphic, because it would be using the interface board to call the specific elevens board class. So it would work because its just another way instead of using a class in uses an interface
